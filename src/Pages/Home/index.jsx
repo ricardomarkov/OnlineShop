@@ -14,19 +14,21 @@ function Home() {
 // .then( data => setItems(data))
 //   },[])
 
-fetch('https://fakestoreapi.com/products/1')
+fetch('https://fakestoreapi.com/products')
 .then(res=>res.json())
-.then(data=>console.log(data))
+.then(data=>setItems(data))
   },[])
 
   return (
       <Layout>
         Home
+        <div className='grid gap-16 grid-cols-4 w-full max-w-screen-lg'>
         {
           data?.map(item => (
             <Card key={item.id} data={item} />
           ))
         }
+        </div>
       </Layout>
   )
 }
