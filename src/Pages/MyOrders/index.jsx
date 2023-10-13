@@ -1,4 +1,4 @@
-import Layout from '../../Components/navbar/Layout'
+import Layout from '../../Components/Layout'
 
 function MyOrders() {
   return (
