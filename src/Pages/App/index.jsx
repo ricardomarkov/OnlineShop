@@ -5,7 +5,7 @@ import MyOrder from '../MyOrder'
 import MyOrders from '../MyOrders'
 import NotFound from '../NotFound'
 import SignIn from '../SignIn'
-import Navbar from '../../Components/navbar'
+import Navbar from '../../Components/Navbar'
 
 import './App.css'
 
