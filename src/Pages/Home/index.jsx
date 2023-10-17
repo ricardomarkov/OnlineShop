@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import Layout from '../../Components/Layout'
 import Card from '../../Components/Card'
+import ProductDetail from '../../Components/ProductDetail'
 
 function Home() {
 //setItems toma la informacion y la guarda en items.
@@ -22,13 +23,14 @@ fetch('https://fakestoreapi.com/products')
   return (
       <Layout>
         Home
-        <div className='grid gap-16 grid-cols-4 w-full max-w-screen-lg'>
+        <div className='grid gap-24 grid-cols-4 w-full max-w-screen-md'>
         {
           data?.map(item => (
             <Card key={item.id} data={item} />
           ))
         }
         </div>
+        <ProductDetail/>
       </Layout>
   )
 }
