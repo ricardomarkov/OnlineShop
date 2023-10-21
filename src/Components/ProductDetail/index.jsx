@@ -6,7 +6,7 @@ const ProductDetail = () =>{
     const context = useContext(ShoppingCartContext)
     return (
         <aside 
-        className={`${context.isProductDetailOpen ? 'flex' : 'hidden'} product-detail scrollable-cards flex-col fixed right-0 bg-white border border-black rounded-lg w-48`}>
+        className={`${context.isProductDetailOpen ? 'flex' : 'hidden'} product-detail scrollable-cards flex-col fixed right-0 bg-white border border-black rounded-lg`}>
             <div className='flex justify-between items-center p-6'>
                 <h2 className='font-small text-s'>{context.productToShow.title}</h2>
                 <div>
@@ -23,7 +23,7 @@ const ProductDetail = () =>{
             <p className='flex flex-col p-4'>
                 <span className='font-medium text-xl'>${context.productToShow.price}</span>
                 <span className='font-medium text-md'></span>
-                <span className='font-light text-xs'>{context.productToShow.description}</span>
+                <span className='font-light text-sm'>{context.productToShow.description}</span>
             </p>
         </aside>
     )

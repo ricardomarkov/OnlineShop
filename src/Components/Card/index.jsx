@@ -18,22 +18,22 @@ const Card = (data) =>{
     }
     return(
         <div 
-        className='flex-col items-center bg-white cursor-pointer w-32 h-32 mb-24'
+        className='group flex-col bg-white cursor-pointer w-full h-28 mb-24'
         onClick={()=>showProduct(data.data)}>
-            <figure className='relative mb-2 w-full h-full'>
-                <span className='absolute bottom-0 left-0 bg-white/60 rounded-lg text-black text-xs m-2 px-3 py-0.5'>{data.data.category}</span>
-                    <img className='ml-6 w-3/4 h-3/4 rounded-lg object-scale-down' src={data.data.image} alt='product-image' />
+            <figure className='justify-items-center relative mb-2 px-8 w-full h-full '>
+                <span className='absolute p-2 text-center inset-x-0 -top-6 bg-black/20 rounded-lg text-black text-xs capitalize py-0.5 invisible group-hover:visible'>{data.data.category}</span>
+                    <img className='my-8 px-8  h-full w-full max-w-lg rounded-lg object-contain' src={data.data.image} alt='product-image' />
                     <div
-                    className='absolute top-0 right-0 justify-center items-center bg-white w-6 h-6 rounded-full p-0.5'
+                    className='absolute top-0 right-0 items-center bg-white w-6 h-6 rounded-full p-0.5'
                     onClick={(event) => {
                         addProductsToCart(event, data.data)
                     }}>
                         <PlusCircleIcon/>
                     </div>
             </figure>
-            <p className='flex justify-center'>
-                <span className='grow text-xs font-light'>{data.data.title}</span>
-                <span className='flex-none text-sm font-medium'>${data.data.price}</span>
+            <p className='group flex'>
+                <span className='basis-36 text-xs font-light group-hover:font-semibold text-ellipsis group-hover: '>{data.data.title}</span>
+                <span className='invisible text-sm font-medium group-hover:visible'>${data.data.price}</span>
             </p>
         </div>
     )
