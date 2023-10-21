@@ -1,15 +1,14 @@
-.checkout-side-menu{
+.product-detail{
     width:350px;
     height: calc(100vh - 68px);
     top:68px;
 }
-
 .scrollable-cards {
 	overflow: scroll;
 }
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
+/* Firefox */
 .scrollable-cards {
 scrollbar-width: auto;
 scrollbar-color: #141414 #ffffff;
