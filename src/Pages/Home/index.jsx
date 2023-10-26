@@ -23,7 +23,7 @@ fetch('https://fakestoreapi.com/products')
   return (
       <Layout>
         Home
-        <div className='grid justify-items-center gap-2 grid-cols-4 w-full max-w-screen-md'>
+        <div className='grid gap-4 grid-cols-1 w-auto max-w-screen-lg md:grid-cols-3'>
         {
           data?.map(item => (
             <Card key={item.id} data={item} />

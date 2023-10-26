@@ -1,4 +1,4 @@
-import {PlusCircleIcon}  from '@heroicons/react/24/solid'
+import {PlusCircleIcon, CheckCircleIcon}  from '@heroicons/react/24/solid'
 import { useContext } from 'react'
 import { ShoppingCartContext } from '../../Context'
 
@@ -16,24 +16,40 @@ const Card = (data) =>{
         context.closeProductDetail()
         console.log('CART: ',context.cartProducts)
     }
-    return(
-        <div 
-        className='group flex-col bg-white cursor-pointer w-full h-28 mb-24'
-        onClick={()=>showProduct(data.data)}>
-            <figure className='justify-items-center relative mb-2 px-8 w-full h-full '>
-                <span className='absolute p-2 text-center inset-x-0 -top-6 bg-black/20 rounded-lg text-black text-xs capitalize py-0.5 invisible group-hover:visible'>{data.data.category}</span>
-                    <img className='my-8 px-8  h-full w-full max-w-lg rounded-lg object-contain' src={data.data.image} alt='product-image' />
-                    <div
-                    className='absolute top-0 right-0 items-center bg-white w-6 h-6 rounded-full p-0.5'
+    const renderIcon = (id) => {
+        const isInCart = context.cartProducts.filter(product => product.id === id).length>0
+        if(isInCart){
+            return(
+                <div
+                        className='bg-white absolute -top-6 right-2 justify-center items-center w-6 h-6 rounded-full m-2 p-0'>
+                            <CheckCircleIcon className='h-6 w-6 text-green-400'/>
+                        </div>
+            )
+        }else{
+            return(
+                <div
+                    className='absolute bg-white -top-6 right-2 items-center w-6 h-6 rounded-full m-2 p-0 group-hover:animate-bounce'
                     onClick={(event) => {
-                        addProductsToCart(event, data.data)
+                    addProductsToCart(event, data.data)
                     }}>
-                        <PlusCircleIcon/>
-                    </div>
+                    <PlusCircleIcon className='h-6 w-6 text-black group-hover:animate-bounce'/>
+                </div>
+            )
+        }
+    }
+
+    return(
+        <div
+        className='group cursor-pointer bg-white w-56 h-60 shadow-2xl rounded-lg'
+        onClick={()=>showProduct(data.data)}>
+            <figure className='relative mt-8 mb-2 w-full h-3/5'>
+                <span className='absolute -top-8 left-0 bg-white/60 rounded-lg text-black text-sm m-2 px-3 py-0.5 invisible group-hover:visible animate-bounce'>{data.data.category}</span>
+                <img className='w-full h-full object-scale-down rounded-lg group-hover:animate-pulse' src={data.data.image} alt={data.data.title} />
+                {renderIcon(data.data.id)}
             </figure>
-            <p className='group flex'>
-                <span className='basis-36 text-xs font-light group-hover:font-semibold text-ellipsis group-hover: '>{data.data.title}</span>
-                <span className='invisible text-sm font-medium group-hover:visible'>${data.data.price}</span>
+            <p className='truncate md:text-ellipsis content-stretch group flex flex-col text-center'>
+                <span className='text-lg font-light group-hover:font-medium '>{data.data.title}</span>
+                <span className='invisible text-xl font-medium group-hover:visible'>${data.data.price}</span>
             </p>
         </div>
     )

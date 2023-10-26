@@ -7,8 +7,8 @@ const Navbar= () =>{
     const context = useContext(ShoppingCartContext)
     const activeStyle= 'underline underline-offset-4'
     return (
-        <nav className='flex justify-between items-center  fixed z-10 w-full py-5 px-8 top-0 text-sm font-light'>
-            <ul className='flex items-center gap-3'>
+        <nav className='backdrop-blur-3xl bg-gradient-to-r from-indigo-950 flex justify-between items-center  fixed z-10 w-full py-7 px-8 top-0 shadow-2xl text-sm font-light'>
+            <ul className='flex items-center gap-3 text-white'>
                 <li className='font-semibold text-lg'>
                     <NavLink to='/'>
                         OnlineShop
