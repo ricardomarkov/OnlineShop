@@ -7,7 +7,7 @@ const Layout = ( { children } ) => {
     //     }
 
     return(
-        <div className='bg-gradient-to-r from-indigo-950 to-white flex items-center flex-col mt-20 md:mt-20'>
+        <div className='h-screen bg-gradient-to-r from-indigo-950 to-white flex items-center flex-col mt-20 md:mt-20'>
             {children}
         </div>
     )
