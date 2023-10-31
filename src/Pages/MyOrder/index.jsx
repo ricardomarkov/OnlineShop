@@ -12,15 +12,15 @@ function MyOrder() {
     if (index === 'last') index = context.order?.length - 1
     return (
     <Layout>
-        <div className='flex w-80 relative items-center justify-center mb-4 mt-4'>
+        <div className='flex w-80 relative items-center justify-center mb-4 mt-4 text-white'>
             <Link to='/my-orders' className='absolute left-0'>
-            <ChevronLeftIcon className='h-4 w-4 text-black cursor-pointer'/>
+            <ChevronLeftIcon className='h-4 w-4 text-white cursor-pointer'/>
             </Link>
             <h1>
                 My Order
             </h1>
         </div>
-        <div className='flex flex-col w-80'>
+        <div className='flex flex-col w-auto bg-white rounded-lg'>
             {
                 context.order?.[index]?.products.map(product =>(
                     <OrderCard
