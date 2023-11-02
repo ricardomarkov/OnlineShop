@@ -22,6 +22,7 @@ const CheckoutSideMenu = () =>{
         }
         context.addOrder([...context.order,orderToAdd])
         context.addCartProducts([])
+        context.setSearchByTitle(null)
     }
     return (
         <aside
