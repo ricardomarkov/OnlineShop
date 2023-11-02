@@ -14,7 +14,6 @@ const Card = (data) =>{
         context.addCartProducts([...context.cartProducts,productData])
         context.openCheckoutSideMenu()
         context.closeProductDetail()
-        console.log('CART: ',context.cartProducts)
     }
     const renderIcon = (id) => {
         const isInCart = context.cartProducts.filter(product => product.id === id).length>0
